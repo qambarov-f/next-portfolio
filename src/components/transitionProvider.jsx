@@ -2,11 +2,35 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./navbar";
-import { usePathname } from "next/navigation";
-
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Loading from "./Loading/Loading";
 
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
+  const [loadingMessage, setLoadingMessage] = useState('');
+  const [loadingComplete, setLoadingComplete] = useState(false);
+
+  useEffect(() => {
+    const messages = ["Salam", "Guten tag", "स्वागत हे", "Ciao", "Olá", "おい", "Hallå", "Hallo", "Bonjour"];
+    let messageIndex = 0;
+
+    const intervalId = setInterval(() => {
+      if (messageIndex < messages.length) {
+        setLoadingMessage(messages[messageIndex]);
+        messageIndex += 1;
+      } else {
+        setLoadingComplete(true);
+        clearInterval(intervalId);
+      }
+    }, 350);
+
+    return () => clearInterval(intervalId);
+  }, [pathName]); 
+
+  if (!loadingComplete) {
+    return <Loading loadingMessage={loadingMessage} />;
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -45,4 +69,4 @@ const TransitionProvider = ({ children }) => {
   );
 };
 
-export default TransitionProvider
+export default TransitionProvider;

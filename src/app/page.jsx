@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Homepage = () => {
+
   return (
     <motion.div
       className="h-full"
