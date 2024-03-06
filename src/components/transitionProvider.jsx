@@ -12,7 +12,19 @@ const TransitionProvider = ({ children }) => {
   const [loadingComplete, setLoadingComplete] = useState(false);
 
   useEffect(() => {
-    const messages = ["Salam", "Guten tag", "स्वागत हे", "Ciao", "Olá", "おい", "Hallå", "Hallo", "Bonjour"];
+    const messages = [
+      "Salam",
+      "Hello",
+      "Guten tag",
+      "Olá",
+      "Здравствуйте",
+      "السلام عليكم",
+      "Ciao",
+      "Halå",
+      "Bonjour",
+      "おい",
+      "Hallo",
+    ];
     let messageIndex = 0;
 
     const intervalId = setInterval(() => {
@@ -23,7 +35,7 @@ const TransitionProvider = ({ children }) => {
         setLoadingComplete(true);
         clearInterval(intervalId);
       }
-    }, 350);
+    }, 280);
 
     return () => clearInterval(intervalId);
   }, [pathName]); 
