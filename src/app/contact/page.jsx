@@ -40,9 +40,8 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-7 md:px-12 lg:px-20 xl:px-48">
-        {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-5xl">
+      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -60,33 +59,28 @@ const ContactPage = () => {
             ))}
           </div>
         </div>
-        {/* FORM CONTAINER */}
+
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-gray-500 rounded-xl text-xl flex flex-col gap-8 justify-center lg:p-24 sm:p-2"
+          className="h-1/2 lg:h-full lg:w-1/2  bg-gray-500 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
-          <span className="font-bold text-white">
-            Dear Mr. Feyruz Gambarov,
-          </span>
+          <span className="text-white"> Dear Mr. Feyruz,</span>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
             name="user_message"
-            id="user_message"
           />
-          <label className="font-bold text-white">My mail address is:</label>
+          <span className="text-white">My mail address is:</span>
           <input
             name="user_email"
             type="text"
             className="bg-transparent border-b-2 border-b-black outline-none"
           />
-          <span className="font-bold text-white">Regards</span>
-
+          <span className="text-white">Regards</span>
           <button className="bg-gray-800 rounded font-semibold text-gold-400 p-4">
             Send
           </button>
-
           {success && (
             <span className="text-green-600 font-semibold">
               Your message has been sent successfully!
