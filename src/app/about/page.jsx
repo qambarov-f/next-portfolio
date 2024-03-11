@@ -4,8 +4,6 @@ import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 // import aboutImage from ''
-  
-
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -34,7 +32,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="/about.jpg"
+              src="/about.png"
               alt=""
               width={200}
               height={200}
@@ -43,19 +41,24 @@ const AboutPage = () => {
             {/* biography title */}
             <h1 className="font-bold text-2xl">Biography</h1>
             {/* biography description */}
-            <p className="text-lg">
-              A motivated and creative individual seeking to embark on a
-              fulfilling career. With a strong willingness to learn and grow, I
-              am eager to take on new challenges and opportunities. As a
-              self-starter, I possess excellent problem-solving skills and have
-              a proven ability to work well under pressure. While I may be new
-              to the workforce, I am committed to delivering high-quality work
-              and contributing to the success of any team I am a part of. I am
-              confident that my positive attitude, adaptability, and strong work
-              ethic will make me a valuable asset to any organization.
+            <p className="text-lg text-white">
+              Hello, I&apos;m{" "}
+              <span className="text-yellow-400 font-bold">Feyruz Gambarov</span>
+              . First off, welcome to my website. As a motivated and creative
+              individual looking to embark on a fulfilling career, I have a
+              strong desire to learn and grow. Eager to take on new challenges
+              and opportunities, I am a self-starter with excellent
+              problem-solving skills and a proven ability to perform well under
+              pressure. Although I am new to the workforce, I am committed to
+              delivering high-quality work and contributing to the success of
+              any team I am part of. I am confident that my positive attitude,
+              adaptability, and strong work ethic will make me a valuable asset
+              to any organization. I have been working in a Frontend position
+              for almost 2 years, and I am looking forward to contributing my
+              experience and skills to teams.
             </p>
             {/* biography quote */}
-            <span className="italic text-gray-300">
+            <span className="italic text-gray-400">
               I don&apos;t follow best practices. I set them!
             </span>
             {/* biography sign */}
